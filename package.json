@@ -1,0 +1,17 @@
+{
+  "name": "ave-prueba",
+  "version": "1.0.0",
+  "description": "",
+  "main": "exercise1.js",
+  "scripts": {
+    "test": "jest --verbose"
+  },
+  "author": "Fernando Mongelos",
+  "license": "ISC",
+  "devDependencies": {
+    "jest": "^29.3.1"
+  },
+  "jest": {
+    "testEnvironment": "node"
+  }
+}
