@@ -4,7 +4,7 @@ const hasSixteenWords = (password) => password.length >= 16;
 
 // password mayusculas y minusculas
 const hasUpperAndLowerCase = (password) =>
-  password !== password.toLowerCase() && password !== password.toUpperCase();
+  password !== password.toString().toLowerCase() && password !== password.toString().toUpperCase();
 // console.log(
 //   'tiene mayus y minus ',
 //   hasUpperAndLowerCase('E8o7b6+er8@asdasdasdasd')
@@ -14,7 +14,7 @@ const hasUpperAndLowerCase = (password) =>
 const hasConsecutiveLetters = (password) => {
   let hasConsecutiveLetters = false;
   for (let i = 1; i < password.length; i++) {
-    if (password[i].toLowerCase() === password[i - 1].toLowerCase()) {
+    if (password[i].toString().toLowerCase() === password[i - 1].toString().toLowerCase()) {
       hasConsecutiveLetters = true;
       break;
     }
@@ -95,11 +95,11 @@ const hasTwoSpecialCharacters = (password) => {
 // );
 
 // password no contenga 0
-const hasZeros = (password) => password.includes('0');
+const hasZeros = (password) => password.toString().includes('0');
 // console.log('tiene ceros ', hasZeros('+Ee8o7b6+er88@asdasdasdas+d'));
 
 //password no contenga espacios
-const hasWhiteSpaces = (password) => password.includes(' ');
+const hasWhiteSpaces = (password) => password.toString().includes(' ');
 // console.log(
 //   'tiene espacios en blanco ',
 //   hasWhiteSpaces('+Ee8o7b6+er88@asdasdasdas+d')
@@ -118,4 +118,26 @@ const isValidPassword = (password) => {
   );
 };
 
-console.log(isValidPassword('e8O7b6+Er@8asdasdasdasd'));
+// console.log(isValidPassword('e8O7b6+Er@8asdasdasdasd'));
+// module.exports = {
+//   hasSixteenWords,
+//   hasUpperAndLowerCase,
+//   hasConsecutiveLetters,
+//   hasFourNumbers,
+//   hasConsecutiveNumbers,
+//   hasTwoSpecialCharacters,
+//   hasZeros,
+//   hasWhiteSpaces,
+//   isValidPassword,
+// };
+export {
+  hasSixteenWords,
+  hasUpperAndLowerCase,
+  hasConsecutiveLetters,
+  hasFourNumbers,
+  hasConsecutiveNumbers,
+  hasTwoSpecialCharacters,
+  hasZeros,
+  hasWhiteSpaces,
+  isValidPassword,
+};
